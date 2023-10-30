@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string.h>
 
 using namespace std;
 
@@ -66,7 +65,7 @@ void insertAfter(int a, Nod *q) {
 
 }
 
-Nod* accessByValue(int a) {
+Nod *accessByValue(int a) {
     if (HEAD == NULL) {
         cout << "ATENTIE! Accesare neefectuata; lista goala\n";
         return NULL;
@@ -82,7 +81,7 @@ Nod* accessByValue(int a) {
     return iter;
 }
 
-Nod* accessByIndex(int a) {
+Nod *accessByIndex(int a) {
     Nod *iter = HEAD;
     int i = 0;
     if (HEAD == NULL) {
@@ -183,18 +182,30 @@ int main() {
 
     while (true) {
         int input;
-        cout << "\n-----------------------------------------------------------------------------------------------------\n";
-        cout << "| Selectati operatia:                                                                               |" << endl;
-        cout << "| 1.     Inserarea unui element la inceputul listei                                                 |" << endl;
-        cout << "| 2.     Inserarea unui element la sfarsitul listei                                                 |" << endl;
-        cout << "| 3.     Inserarea unui element dupa un element dat                                                 |" << endl;
-        cout << "| 4.     Accesarea unui element prin cautarea unei valori date in lista                             |" << endl;
-        cout << "| 5.     Accesarea unui element prin numarul de ordine al elementului                               |" << endl;
-        cout << "| 6.     Stergerea primului element din lista                                                       |" << endl;
-        cout << "| 7.     Stergerea ultimului element din lista                                                      |" << endl;
-        cout << "| 8.     Stergerea unui element dat. Se cunoaste adresa elementului care trebuie sters              |" << endl;
-        cout << "| 9.     Afisare lista                                                                              |" << endl;
-        cout << "-----------------------------------------------------------------------------------------------------\n";
+        cout
+                << "\n-----------------------------------------------------------------------------------------------------\n";
+        cout << "| Selectati operatia:                                                                               |"
+             << endl;
+        cout << "| 1.     Inserarea unui element la inceputul listei                                                 |"
+             << endl;
+        cout << "| 2.     Inserarea unui element la sfarsitul listei                                                 |"
+             << endl;
+        cout << "| 3.     Inserarea unui element dupa un element dat                                                 |"
+             << endl;
+        cout << "| 4.     Accesarea unui element prin cautarea unei valori date in lista                             |"
+             << endl;
+        cout << "| 5.     Accesarea unui element prin numarul de ordine al elementului                               |"
+             << endl;
+        cout << "| 6.     Stergerea primului element din lista                                                       |"
+             << endl;
+        cout << "| 7.     Stergerea ultimului element din lista                                                      |"
+             << endl;
+        cout << "| 8.     Stergerea unui element dat. Se cunoaste adresa elementului care trebuie sters              |"
+             << endl;
+        cout << "| 9.     Afisare lista                                                                              |"
+             << endl;
+        cout
+                << "-----------------------------------------------------------------------------------------------------\n";
         cin >> input;
 
         switch (input) {
