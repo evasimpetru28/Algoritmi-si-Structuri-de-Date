@@ -1,0 +1,3 @@
+/home/eva/CLionProjects/ASD/laborator2/cmake-build-debug/CMakeFiles/laborator2.dir
+/home/eva/CLionProjects/ASD/laborator2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/eva/CLionProjects/ASD/laborator2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
