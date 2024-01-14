@@ -142,6 +142,47 @@ void mergeSort() {
 
 }
 
+int partition(int pivot, int st, int dr) {
+    int i = st + 1, j = dr;
+    while (i <= j) {
+        while (i <= dr && v[i] <= v[pivot]) {
+            i++;
+        }
+        while (j >= st && v[j] > v[pivot]) {
+            j--;
+        }
+        if (i < j && i <= dr && j >= st) {
+            swap(v[i], v[j]);
+            i++;
+            j--;
+        }
+    }
+    return i - 1;
+
+}
+
+void quickSort(int pivot, int st, int dr) {
+    if (st < dr) {
+        int newPivot = partition(pivot, st, dr);
+        swap(pivot, newPivot);
+        quickSort(pivot, st, newPivot - 1);
+        quickSort(pivot, newPivot + 1, dr);
+    }
+}
+
+void quickSort() {
+    cout << "Initial vector: ";
+    displayVector();
+
+    quickSort(0, 1, n - 1);
+
+    cout << "Sorted vector:  ";
+    displayVector();
+
+    // Best case: equilibrated items => n log(n) comparisons -> O(n log(n)) complexity
+    // Worst case: sorted ASC vector + pivot first elem => (n + 1)(n + 2) / 2 comparisons -> O(n^2) complexity
+}
+
 int main() {
     int x;
     cout << "\n-----------------------------------\n";
@@ -166,13 +207,14 @@ int main() {
             return 1;
     }
 
-    cout << "\n-----------------------------------\n";
+    cout << "\n----------------------------------------\n";
     cout << "Choose the desired sorting method:\n";
     cout << "|  1. Selection sort   - O(n^2)\n";
     cout << "|  2. Insertion sort   - O(n^2)\n";
     cout << "|  3. Bubble sort      - O(n^2)\n";
-    cout << "|  4. Merge sort       - O(nlogn)\n";
-    cout << "-----------------------------------\n";
+    cout << "|  4. Merge sort       - O(n log(n))\n";
+    cout << "|  5. Quick sort       - O(n log(n))\n";
+    cout << "-----------------------------------------\n";
     cin >> x;
     cout << endl;
 
@@ -188,6 +230,9 @@ int main() {
             break;
         case 4:
             mergeSort();
+            break;
+        case 5:
+            quickSort();
             break;
         default:
             return 1;
