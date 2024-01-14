@@ -93,17 +93,16 @@ void bubbleSort() {
 
 void interclasare(int st, int dr, int c[]) {
     int mijloc = (st + dr) / 2;
-    int i = st, j = mijloc + 1, k = 0;
+    int i = st, j = mijloc + 1, k = st;
     while (i <= mijloc && j <= dr) {
         if (v[i] < v[j]) {
             c[k] = v[i];
             i++;
-            k++;
         } else {
             c[k] = v[j];
             j++;
-            k++;
         }
+        k++;
     }
     while (i <= mijloc) {
         c[k] = v[i];
@@ -126,10 +125,8 @@ void mergeSort(int st, int dr) {
         mergeSort(mijloc + 1, dr);
         interclasare(st, dr, c);
 
-        int j = 0;
         for (int i = st; i <= dr; ++i) {
-            v[i] = c[j];
-            j++;
+            v[i] = c[i];
         }
     }
 }
@@ -142,6 +139,7 @@ void mergeSort() {
 
     cout << "Sorted vector:  ";
     displayVector();
+
 }
 
 int main() {
