@@ -22,7 +22,7 @@ void readVector() {
 void generateRandomNumbers() {
     srand(time(nullptr));
     for (int i = 1; i <= n; ++i) {
-        v[i] = rand() % 101;
+        v[i] = rand() % 100;
     }
 }
 
@@ -144,17 +144,22 @@ void mergeSort() {
 
 int partition(int pivot, int st, int dr) {
     int i = st + 1, j = dr;
+    cout << "i start: " << i << " | j end: " << j << endl;
+    cout << "v[pivot] " << v[pivot] << endl;
     while (i <= j) {
         while (i <= dr && v[i] <= v[pivot]) {
             i++;
         }
+        cout << "s-a ajuns la i=" << i << endl;
         while (j >= st && v[j] > v[pivot]) {
             j--;
         }
+        cout << "s-a ajuns la j=" << j << endl;
         if (i < j && i <= dr && j >= st) {
             swap(v[i], v[j]);
             i++;
             j--;
+            cout << "s-a facut swap intre valorile: v[" << i << "]=" << v[i] << " si v[" << j << "]=" << v[j] << endl;
         }
     }
     return i - 1;
@@ -164,9 +169,13 @@ int partition(int pivot, int st, int dr) {
 void quickSort(int pivot, int st, int dr) {
     if (st < dr) {
         int newPivot = partition(pivot, st, dr);
-        swap(pivot, newPivot);
+        cout << "Pivot " << pivot << endl;
+        cout << "New pivot " << newPivot << endl;
+        swap(v[pivot], v[newPivot]);
+        displayVector();
         quickSort(pivot, st, newPivot - 1);
         quickSort(pivot, newPivot + 1, dr);
+
     }
 }
 
