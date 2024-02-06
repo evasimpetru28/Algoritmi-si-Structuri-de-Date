@@ -142,7 +142,8 @@ void mergeSort() {
 
 }
 
-int partition(int pivot, int st, int dr) {
+int partition(int st, int dr) {
+    int pivot = st; // Pivotul il luam mereu ca fiind primul element din lista
     int i = st + 1, j = dr;
     cout << "i start: " << i << " | j end: " << j << endl;
     cout << "v[pivot] " << v[pivot] << endl;
@@ -151,7 +152,8 @@ int partition(int pivot, int st, int dr) {
             i++;
         }
         cout << "s-a ajuns la i=" << i << endl;
-        while (j >= st && v[j] > v[pivot]) {
+        while ((j >= st) && (v[j] > v[pivot])) {
+            cout << "v[j]=" << v[j] << " ";
             j--;
         }
         cout << "s-a ajuns la j=" << j << endl;
@@ -162,19 +164,19 @@ int partition(int pivot, int st, int dr) {
             cout << "s-a facut swap intre valorile: v[" << i << "]=" << v[i] << " si v[" << j << "]=" << v[j] << endl;
         }
     }
+    cout << "SE RETURNEAZA i = " << i - 1 << endl;
     return i - 1;
 
 }
 
-void quickSort(int pivot, int st, int dr) {
+void quickSort(int st, int dr) {
     if (st < dr) {
-        int newPivot = partition(pivot, st, dr);
-        cout << "Pivot " << pivot << endl;
+        int newPivot = partition(st, dr);
         cout << "New pivot " << newPivot << endl;
-        swap(v[pivot], v[newPivot]);
+//        swap(v[pivot], v[newPivot]);
         displayVector();
-        quickSort(pivot, st, newPivot - 1);
-        quickSort(pivot, newPivot + 1, dr);
+        quickSort(st, newPivot - 1);
+        quickSort(newPivot + 1, dr);
 
     }
 }
@@ -183,7 +185,7 @@ void quickSort() {
     cout << "Initial vector: ";
     displayVector();
 
-    quickSort(0, 1, n - 1);
+    quickSort(0, n - 1);
 
     cout << "Sorted vector:  ";
     displayVector();
