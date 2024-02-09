@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/eva/CLionProjects/ASD/laborator3/cmake-build-debug",
-		"source" : "/home/eva/CLionProjects/ASD/laborator3"
+		"build" : "/home/eva/CLionProjects/Algoritmi-si-Structuri-de-Date/laborator3/cmake-build-debug",
+		"source" : "/home/eva/CLionProjects/Algoritmi-si-Structuri-de-Date/laborator3"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 5
+		"minor" : 6
 	}
 }
