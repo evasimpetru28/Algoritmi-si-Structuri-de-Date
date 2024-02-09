@@ -1,3 +1,3 @@
-/home/eva/CLionProjects/Algoritmi-si-Structuri-de-Date/laborator3/cmake-build-debug/CMakeFiles/laborator3.dir
-/home/eva/CLionProjects/Algoritmi-si-Structuri-de-Date/laborator3/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/eva/CLionProjects/Algoritmi-si-Structuri-de-Date/laborator3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/eva/CLionProjects/ASD/laborator3/cmake-build-debug/CMakeFiles/laborator3.dir
+/home/eva/CLionProjects/ASD/laborator3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/eva/CLionProjects/ASD/laborator3/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -13,7 +13,7 @@ void displayVector() {
 }
 
 void readVector() {
-    cout << "Introduceti elementele: ";
+    cout << "Enter " << n << " elements: ";
     for (int i = 0; i < n; i++) {
         cin >> v[i];
     }
@@ -139,45 +139,28 @@ void mergeSort() {
 
     cout << "Sorted vector:  ";
     displayVector();
-
 }
 
 int partition(int st, int dr) {
-    int pivot = st; // Pivotul il luam mereu ca fiind primul element din lista
-    int i = st + 1, j = dr;
-    cout << "i start: " << i << " | j end: " << j << endl;
-    cout << "v[pivot] " << v[pivot] << endl;
-    while (i <= j) {
-        while (i <= dr && v[i] <= v[pivot]) {
+    int pivot = dr; // Pivotul il luam mereu ca fiind ultimul element din lista
+    int i = st - 1;
+
+    for (int j = st; j <= dr - 1; j++) {
+        if (v[j] <= v[pivot]) {
             i++;
-        }
-        cout << "s-a ajuns la i=" << i << endl;
-        while ((j >= st) && (v[j] > v[pivot])) {
-            cout << "v[j]=" << v[j] << " ";
-            j--;
-        }
-        cout << "s-a ajuns la j=" << j << endl;
-        if (i < j && i <= dr && j >= st) {
             swap(v[i], v[j]);
-            i++;
-            j--;
-            cout << "s-a facut swap intre valorile: v[" << i << "]=" << v[i] << " si v[" << j << "]=" << v[j] << endl;
         }
     }
-    cout << "SE RETURNEAZA i = " << i - 1 << endl;
-    return i - 1;
+    swap(v[i + 1], v[dr]);
 
+    return (i + 1);
 }
 
 void quickSort(int st, int dr) {
     if (st < dr) {
         int newPivot = partition(st, dr);
-        cout << "New pivot " << newPivot << endl;
-//        swap(v[pivot], v[newPivot]);
-        displayVector();
         quickSort(st, newPivot - 1);
         quickSort(newPivot + 1, dr);
-
     }
 }
 
@@ -185,7 +168,7 @@ void quickSort() {
     cout << "Initial vector: ";
     displayVector();
 
-    quickSort(0, n - 1);
+    quickSort(1, n - 1);
 
     cout << "Sorted vector:  ";
     displayVector();
@@ -199,12 +182,11 @@ int main() {
 
     while (true) {
 
-
-        cout << "\n-----------------------------------\n";
-        cout << "Choose method of generating the elements:\n";
-        cout << "|  1. Manual by keyboard input\n";
-        cout << "|  2. Random generated numbers <=100\n";
-        cout << "-----------------------------------\n";
+        cout << "\n---------------------------------------------\n";
+        cout << "|Choose method of generating the elements:  |\n";
+        cout << "|  1. Manual by keyboard input              |\n";
+        cout << "|  2. Random generated numbers <=100        |\n";
+        cout << "---------------------------------------------\n";
 
         cin >> x;
 
@@ -223,14 +205,14 @@ int main() {
                 exit(1);
         }
 
-        cout << "\n----------------------------------------\n";
-        cout << "Choose the desired sorting method:\n";
-        cout << "|  1. Selection sort   - O(n^2)\n";
-        cout << "|  2. Insertion sort   - O(n^2)\n";
-        cout << "|  3. Bubble sort      - O(n^2)\n";
-        cout << "|  4. Merge sort       - O(n log(n))\n";
-        cout << "|  5. Quick sort       - O(n log(n))\n";
-        cout << "-----------------------------------------\n";
+        cout << "\n---------------------------------------------\n";
+        cout << "|Choose the desired sorting method:         |\n";
+        cout << "|  1. Selection sort   - O(n^2)             |\n";
+        cout << "|  2. Insertion sort   - O(n^2)             |\n";
+        cout << "|  3. Bubble sort      - O(n^2)             |\n";
+        cout << "|  4. Merge sort       - O(n log(n))        |\n";
+        cout << "|  5. Quick sort       - O(n log(n))        |\n";
+        cout << "---------------------------------------------\n";
         cin >> x;
         cout << endl;
 
