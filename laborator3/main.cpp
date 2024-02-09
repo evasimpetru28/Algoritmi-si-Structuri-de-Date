@@ -1,3 +1,12 @@
+/*
+ * Nume: Simpetru Eva-Maria
+ * An: 2 ID
+ * Grupa: 208
+ *
+ * Github assignment: https://github.com/evasimpetru28/Algoritmi-si-Structuri-de-Date/tree/main/laborator3
+ *
+ */
+
 #include <iostream>
 
 using namespace std;
